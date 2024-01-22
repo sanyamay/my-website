@@ -1,19 +1,15 @@
 # my-website
 
-1. Server Provisioning:
+# 1. Server Provisioning:
 
-I have AWS student account.
+I created a Virtual Private Cloud (VPC). Following that, I created subnets and route tables, and then attached them to the VPC. Next, I configured firewall rules, specifically allowing inbound traffic for SSH, HTTP, and HTTPS services in the security group.
 
-I have create the vpc. After that create the Subnets then after create Route tables after that all attach to the vps. next set the firewall rules which is set in indbound rule SSH, HTTP, HTTPS this services i allow in in security group.
-
-After complition of VPC, I create the instance by using ubuntu machine and give the name is myhos. then i lanch the instance
-Set the host name by using command my domain name is lkshmisakha.site 
+Upon completion of the VPC setup, I created an instance using an Ubuntu machine and named it "myhos." I then launched the instance and set the hostname using the following command, considering my domain name is "lkshmisakha.site"
 hostnamectl set-hostname lkshmisakha.site
-
 
 2. Website Configuration :
 
-#First installed the nginx server by using the follwing commands
+# First installed the nginx server by using the follwing commands
 apt install nginx -y
 
 # Install MySQL
@@ -22,31 +18,25 @@ sudo apt install -y mysql-server
 # Secure MySQL installation
 sudo mysql_secure_installation
 
-# wordpress installation
+# Wordpress installation
 wget https://wordpress.org/latest.zip
 
-# unzip tool 
+# Unzip tool 
 apt install unzip
 
-
-#create the directory
+# Create the directory
 mkdir -p /usr/share/nginx
 
-#unziping file
+# Unziping file
 unzip latest.zip -d /usr/share/nginx/
 
-
-For the setup of wordpress need to install some PHP extensions. i have install below PHP extensions.
-
+# For setting up WordPress, it is necessary to install some PHP extensions. I have installed the following PHP extensions:
 apt install php-imagick php8.1-fpm php8.1-mbstring php8.1-bcmath php8.1-xml php8.1-mysql php8.1-common php8.1-gd php8.1-cli php8.1-curl php8.1-zip
 
-
 # Moving files in the created directory 
-# Also my domaian name is lkshmisakha.site
 mv /usr/share/nginx/wordpress /usr/share/nginx/lkshmisakha.site
 
-
-# Go to your WordPress directory.
+# After that, navigate to your WordPress directory.
 cd /usr/share/nginx/lkshmisakha.site/
 
 # Copy the sample configuration file and rename it to wp-config.php.
@@ -132,18 +122,16 @@ nginx -t
  systemctl start nginx
  systemctl enable nginx
 
-# Give the permission to admin.php to access globally
-
-#chmod 755 /usr/share/nginx/lkshmisakha.site/wp-admmin/admin.php
+# Grant executable permissions to admin.php
+chmod 755 /usr/share/nginx/lkshmisakha.site/wp-admmin/admin.php
 
 # Display Nginx status
-sudo systemctl status nginx
+systemctl status nginx
 
-
-2. For secure web site perpose i have us the below command
+# For securing the website, I used the following command:
 apt install certbot python3-certbot-nginx
 
-After installation of cerboti use below command for secure my site
+# After installing Certbot, use the following command to secure my site:
 certbot --nginx -d  lkshmisakha.site
 
 Please find the below URL 
