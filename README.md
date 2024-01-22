@@ -120,9 +120,6 @@ nginx -t
  systemctl start nginx
  systemctl enable nginx
 
-# Grant executable permissions to admin.php
-chmod 755 /usr/share/nginx/lkshmisakha.site/wp-admmin/admin.php
-
 # Display Nginx status
 systemctl status nginx
 
