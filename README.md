@@ -1,13 +1,13 @@
 # my-website
 
-# 1. Server Provisioning:
+# 1.Server Provisioning:
 
 I created a Virtual Private Cloud (VPC). Following that, I created subnets and route tables, and then attached them to the VPC. Next, I configured firewall rules, specifically allowing inbound traffic for SSH, HTTP, and HTTPS services in the security group.
 
 Upon completion of the VPC setup, I created an instance using an Ubuntu machine and named it "myhos." I then launched the instance and set the hostname using the following command, considering my domain name is "lkshmisakha.site"
 hostnamectl set-hostname lkshmisakha.site
 
-2. Website Configuration :
+# 2.Website Configuration :
 
 # First installed the nginx server by using the follwing commands
 apt install nginx -y
