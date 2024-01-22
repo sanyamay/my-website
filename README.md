@@ -1,5 +1,3 @@
-# my-website
-
 # 1.Server Provisioning:
 
 I created a Virtual Private Cloud (VPC). Following that, I created subnets and route tables, and then attached them to the VPC. Next, I configured firewall rules, specifically allowing inbound traffic for SSH, HTTP, and HTTPS services in the security group.
